@@ -20,18 +20,6 @@ function App(): JSX.Element {
   const [newTask, setNewTask] = useState<string>('');
   const [tasks, setTasks] = useState<ITask[]>([]);
 
-  const handleSubmit = (e: FormElements) => {
-    e.preventDefault(); //Por defecto recarga la pagina, esta linea hace que no lo haga
-    addTask(newTask);
-    setNewTask(''); //Cogemos los datos y limpiamos el input
-  }
-
-  const addTask = (name: string) => {
-    const newTasks: ITask[] = [...tasks, {name, done: false}]
-    //Copia el contenido "...tasks", insetar la nueva "{name}"
-    setTasks(newTasks)
-  }
-
   return (
     <Router>
       <Navigation />
